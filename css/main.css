@@ -1,0 +1,816 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    /* colors  */
+    --color-defalut: #212529;
+    --primary-hue: 0;
+    --primary-saturation: 84%;
+    --primary-lightness: 44%;
+    --color-primary: hsl(var(--primary-hue), var(--primary-saturation), var(--primary-lightness));
+    --color-secondary: #37373f;
+    --color-tertiary: #7f7f90;
+    --light-hue: 0;
+    --light-saturation: 0%;
+    --light-lightness: 100%;
+    --color-light: hsl(var(--light-hue), var(--light-saturation), var(--light-lightness));
+    --color-light-grey: #eee;
+    /* Fonts */
+    --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-primary: "Amatic SC", sans-serif;
+    --font-secondary: "Inter", sans-serif;
+    /* Animation options */
+    --animation-duration: 400ms;
+}
+
+body {
+    font-family: var(--font-default);
+    color: var(--color-defalut);
+}
+
+a,
+span {
+    display: inline-block;
+}
+
+picture,
+img {
+    display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-secondary);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* Reapeted Styles */
+.section-bg {
+    background-color: var(--color-light-grey);
+}
+
+.main-title {
+    text-align: center;
+    margin-bottom: 1.5625rem;
+}
+
+.main-title h2 {
+    color: var(--color-tertiary);
+    font-weight: 400;
+    font-size: 0.875rem;
+}
+
+.main-title span {
+    color: var(--color-primary);
+}
+
+.main-title p {
+    font-size: 3.125rem;
+    font-family: var(--font-primary);
+}
+
+/* ---------------------- container >>>>> */
+.container {
+    --padding: 2.5rem 0.3125rem;
+    --margin-top: 0;
+    --margin-bottom: 0;
+    width: 100%;
+    margin-inline: auto;
+    margin-top: var(--margin-top);
+    margin-bottom: var(--margin-bottom);
+    padding: var(--padding);
+
+
+}
+
+.btn {
+    --margin-bottom: 0.5rem;
+    background-color: var(--color-primary);
+    font-size: 0.9375rem;
+    padding: 0.625rem 1.5625rem;
+    border: 0.125rem, solid, transparent;
+    border-radius: 100vh;
+    color: var(--color-light);
+    margin-bottom: var(--margin-bottom);
+    cursor: pointer;
+}
+
+/* >>>>>>>>>>>>>>>>>>>>  Start with Header Style >>>>>>>>>>>> */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5.625rem;
+}
+
+header .container picture {
+    width: 95%;
+
+}
+
+header .header-cap {
+    width: 95%;
+    margin-top: 5.9375rem;
+    text-align: center;
+}
+
+header .header-cap h2 {
+    font-family: var(--font-primary);
+    color: var(--color-secondary);
+    font-size: 4.0625rem;
+}
+
+header .header-cap p {
+
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #4f4f5a;
+}
+
+header .container picture img {
+    width: 100%;
+    filter: drop-shadow(4px 4px 9px #000a);
+}
+
+header .header-cap .icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-btn {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    margin-top: 1rem;
+
+}
+
+header .header-cap .icons .icon {
+    width: 3.4375rem;
+    height: 3.4375rem;
+    background-image: linear-gradient(to right,
+            var(--color-primary) 0 50%,
+            transparent 50% 100%);
+    font-size: 1rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 55;
+
+}
+
+header .header-cap .icons .icon i {
+    z-index: 5;
+}
+
+header .header-cap .icons .icon::before {
+    content: "";
+    position: absolute;
+    background-color: var(--color-light);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: inherit;
+}
+
+.btn:hover {
+    background-color: hsl(var(--primary-hue),
+            var(--primary-saturation),
+            calc(var(--primary-lightness) + 5%));
+}
+
+.btn-main {
+    transition: color var(--animation-duration);
+
+}
+
+.video-btn:hover {
+    color: hsl(var(--primary-hue),
+            var(--primary-saturation),
+            calc(var(--primary-lightness) + 5%));
+}
+
+@keyframes vibrate {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-2px, 4px);
+    }
+
+    40% {
+        transform: translate(-2px, -4px);
+    }
+
+    60% {
+        transform: translate(2px, 4px);
+    }
+
+    80% {
+        transform: translate(2px, -4px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+header .container picture:hover {
+    animation: vibrate var(--animation-duration) 0.3s linear infinite both;
+}
+
+/* >>>>>>>>>>>>>>>>>>>>  End with Header Style >>>>>>>>>>>> */
+
+
+/* >>>>>>>>>>>>>>>>>>>>  Start with Nav-bar Style >>>>>>>>>>>> */
+
+nav {
+    box-shadow: 0px 0px 14px 0px #0000001b;
+    background-color: var(--color-light);
+    width: 100%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+}
+
+nav .container {
+    --padding: 1rem 0.3125rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .container .icons {
+    display: flex;
+    flex-direction: row-reverse;
+    font-weight: 900;
+    gap: 1rem;
+    font-size: 1.5rem;
+}
+
+nav .container h1 a {
+    position: relative;
+    font-size: 2rem;
+    font-family: var(--font-default);
+    color: var(--color-defalut);
+}
+
+nav .container h1 a::after {
+    content: "";
+    width: 0.3rem;
+    border-radius: 50%;
+    height: 0.3rem;
+    position: absolute;
+    top: 80%;
+    background-color: red;
+}
+
+nav .container ul {
+    display: flex;
+    gap: 1rem;
+    transition: transform var(--animation-duration);
+}
+
+nav .container .icons .menu .menu-icon {
+    display: none;
+}
+
+body:has(.navLinks:target) nav {
+    height: 100vh;
+    background-color: #fff5;
+
+}
+
+.navLinks:target {
+    transform: translateX(0);
+}
+
+nav .container ul .close {
+    display: none;
+}
+
+nav .container ul a {
+    font-size: 1.0625rem;
+    color: var(--color-tertiary);
+    font-weight: 600;
+    position: relative;
+}
+
+nav .container ul a:hover {
+    color: var(--color-defalut);
+}
+
+nav .container ul a::after {
+    content: "";
+    position: absolute;
+    background-color: var(--color-primary);
+    width: 0%;
+    height: .1em;
+    bottom: -0.5rem;
+    top: 100%;
+    left: 0;
+    transition: width var(--animation-duration);
+
+}
+
+nav .container ul a:hover::after {
+    width: 100%;
+}
+
+body:has(.home:target) .home,
+body:has(.chefs:target) .chefs,
+body:has(.gallery:target) .gallery,
+body:has(.contact:target) .contact {
+    color: var(--color-defalut) !important;
+}
+
+body:has(.home:target) .home::after,
+body:has(.chefs:target) .chefs::after,
+body:has(.gallery:target) .gallery::after,
+body:has(.contact:target) .contact::after {
+    width: 100%;
+}
+
+.mode-group i {
+    cursor: pointer;
+}
+
+.mode-group .light {
+    display: none;
+}
+
+
+
+
+
+
+/* >>>>>>>>>>>>>>>>>>>>  Start with chefs Style >>>>>>>>>>>> */
+.chefs .container {
+    width: 95%;
+}
+
+.chefs .container .main-title {
+
+    text-align: center;
+
+}
+
+.chefs .container .main-title h2 {
+    color: var(--color-tertiary);
+    font-weight: 400;
+    font-size: 0.875rem;
+}
+
+.chefs .container .main-title span {
+    color: var(--color-primary);
+}
+
+.chefs .container .main-title p {
+    font-size: 3.125rem;
+    font-family: var(--font-primary);
+}
+
+.chefs .container .chefs-cards {
+    --gap: 1.875rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    padding-block: 1.25rem;
+
+}
+
+.chefs .container .chefs-cards .card picture {
+    width: 100%;
+    position: relative;
+}
+
+.chefs .container .chefs-cards .card picture::after {
+    content: "";
+    width: 100%;
+    height: 3.75rem;
+    bottom: -1px;
+    left: 0;
+    background-image: url(../imgs/images/team-shape.svg);
+    position: absolute;
+}
+
+.chefs .container .chefs-cards .card picture img {
+    width: 100%;
+    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+}
+
+.chefs .container .chefs-cards .card {
+    /* width: calc(calc(100% - var(--gap) * 2) / 3); */
+    border-radius: 0.5rem;
+    box-shadow: 3px 3px 15px 0px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    transition: transform var(--animation-duration);
+    overflow: hidden;
+
+}
+
+.chefs .container .chefs-cards .card:hover {
+    transform: scale(1.07);
+}
+
+.chefs .container .chefs-cards .card:hover .icons {
+    transform: translateX(0);
+}
+
+.chefs .container .chefs-cards .card .card-content {
+    padding: 1.5625rem;
+    padding-top: 0.625rem;
+    text-align: center;
+}
+
+.chefs .container .chefs-cards .card .card-content span {
+    font-size: 0.875rem;
+    color: var(--color-tertiary);
+}
+
+.chefs .container .chefs-cards .card .card-content p {
+    font-size: 0.9375rem;
+    font-style: italic;
+    color: var(--color-tertiary);
+}
+
+.chefs .container .chefs-cards .card .icons {
+    display: flex;
+
+    flex-direction: column;
+    gap: 1.25rem;
+    border-radius: 0.3125rem;
+    background-color: #0000001b;
+    padding: 0.625rem;
+    width: fit-content;
+    cursor: pointer;
+    position: absolute;
+    top: 10%;
+    right: 3.5%;
+    transform: translateX(150%);
+    transition: transform var(--animation-duration);
+
+
+}
+
+.chefs .container .chefs-cards .card .icons a {
+    color: #37373f66;
+    font-size: 1.125rem;
+}
+
+.chefs .container .chefs-cards .card .icons a:hover {
+    color: var(--color-defalut);
+}
+
+/* >>>>>>>>>>>>>>>>>>>>  End with chefs Style >>>>>>>>>>>> */
+
+/* >>>>>>>>>>>>>>>>>>>>  Start with gallery Style >>>>>>>>>>>> */
+
+.gallery .container {
+    width: 95%;
+
+}
+
+.gallery .container .main-title {
+    text-align: center;
+}
+
+.gallery .container .gallery-cards .card picture img {
+    width: 100%;
+    transition: transform var(--animation-duration);
+
+}
+
+.gallery .container .gallery-cards .card picture {
+    width: 100%;
+    border: 4px solid #fff;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.gallery .container .gallery-cards .card picture:hover .layer {
+    transform: translateY(0);
+}
+
+.gallery .container .gallery-cards .card picture:hover img {
+    transform: scale(1.1);
+}
+
+
+
+.gallery .container .gallery-cards .card {
+
+    padding-block: 1rem;
+
+
+
+
+}
+
+.gallery .container .gallery-cards .card .layer {
+    background-color: #00000096;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    z-index: 99;
+    padding: 0.9375rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(100%);
+    transition: transform var(--animation-duration);
+}
+
+/* >>>>>>>>>>>>>>>>>>>>  End with gallery Style >>>>>>>>>>>> */
+
+/*>>>>>>>>>>>>>>>>>>> Start with conatct style >>>>>>>>>>>>>>>>> */
+
+.contact .container {
+    width: 95%;
+}
+
+.contact .container .map iframe {
+    width: 100%;
+    height: 21.875rem;
+
+}
+
+.contact .container .details {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9375rem;
+    margin-block: 1.5625rem;
+
+}
+
+.contact .container .details .item {
+    display: flex;
+    background-color: hsl(var(--light-hue),
+            var(--light-saturation),
+            calc(var(--light-lightness) - 4%));
+    padding: 1.5625rem;
+    width: 100%;
+}
+
+.contact .container .details .item .icon {
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    width: 3.125rem;
+    height: 3.125rem;
+    color: var(--color-light);
+
+}
+
+.contact .container form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-light);
+}
+
+.contact .container form textarea
+{
+    width: 100%;
+    resize: vertical;
+    height: 9.375rem;
+    width: 100%;
+    border: 2px solid hsl(var(--light-hue),
+    calc(var(--light-saturation) + 10%),
+    calc(var(--light-lightness) - 10%));
+}
+
+.contact .container form input {
+    padding: 0.9375rem 0.9375rem;
+    line-height: 1.5;
+    border: 2px solid hsl(var(--light-hue),
+            calc(var(--light-saturation) + 10%),
+            calc(var(--light-lightness) - 10%));
+    color: #212529;     
+    width: 100%;       
+}
+
+.contact .container form .input-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;  
+}
+
+/*>>>>>>>>>>>>>>>>>>> End with conatct style >>>>>>>>>>>>>>>>> */
+/*>>>>>>>>>>>>>>>>>>> Start with Footer style >>>>>>>>>>>>>>>>> */
+footer
+{
+    background-image: linear-gradient(#0009, #0009) , url(../imgs/images/textured-metal-background.jpg);
+    background-size: contain;
+    color:#fff ;
+    box-shadow: 0px -1px 5px #0007;
+}
+
+footer .conatiner 
+{
+    --gap:1.25rem;
+}
+footer .container .about .about-head
+{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    align-items: center;
+}
+footer .container .about .about-head h2
+{
+    position: relative;
+    font-size: 2rem;
+
+}
+footer .container .about .about-head h2::after {
+    content: "";
+    width: 0.3rem;
+    border-radius: 50%;
+    height: 0.3rem;
+    position: absolute;
+    top: 80%;
+    background-color: red;
+}
+
+footer .container .about .about-head img 
+{
+    width: 4rem;
+}
+
+footer .container .about  p 
+{
+    margin-block: 0.625rem;
+}
+
+footer .container .about  h3 
+{
+    text-align: center;
+    padding:0.625rem ;
+    border-bottom:2px solid #ddd6 ;
+    margin-bottom: 0.625rem;
+ 
+}
+footer .container .about  .social
+{
+    text-align: center;
+    padding:0.625rem ;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+
+} 
+
+
+footer .container .sub .box h3 
+{
+    margin-top: 0.625rem;
+}
+footer .container .sub .box p 
+{
+    margin-block:0.625rem ;
+}
+footer .container .sub .box .inputs 
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+footer .container .sub .box .inputs input 
+{
+    width: 100%; 
+    padding: 0.9375rem 0.9375rem;
+    line-height: 1.5;
+    border: 2px solid hsl(var(--light-hue),
+            calc(var(--light-saturation) + 10%),
+            calc(var(--light-lightness) - 10%));
+    color: #212529; 
+
+}
+footer .container .sub .box .inputs button 
+{
+    border-radius: 0;
+    width: 100%;
+}
+
+
+footer .container .quick ul 
+{
+    --gap:1.25rem; 
+    display: flex;
+    gap: var(--gap);
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+footer .container .quick ul li a
+{
+    margin-inline: 2rem;
+}
+footer .container .quick ul li 
+{
+    padding: 5px;
+    width:calc(calc(100% - var(--gap)) / 2) ;
+    position: relative;
+    color: white;
+    transition: transform var(--animation-duration);
+}
+footer .container .quick ul li:hover 
+{
+    background-color:#222 ;
+    transform: translateX(.625rem);
+}
+footer .container .quick ul li::after
+{
+    content: ">";
+    width: 100%;
+    height: 100%;
+    left: 1%;
+    top: 0;
+    position: absolute;
+    color: white;
+    font-weight: bolder;
+
+}
+
+footer .container .git h3
+{
+    margin-bottom: 10px;
+}
+footer .container .git .item 
+{
+    display: flex;
+    gap: 1rem;
+    padding-block: 1rem;
+}
+footer .container .git i 
+{
+    font-size: 1.5rem;
+    color: red;
+}
+footer .container .hady 
+{
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid hsl(var(--light-hue),
+    calc(var(--light-saturation) + 10%),
+    calc(var(--light-lightness) - 10%));
+    font-family: var(--font-primary);
+    font-size: 2rem;
+}
+
+/*>>>>>>>>>>>>>>>>>>> End with conatct style >>>>>>>>>>>>>>>>> */

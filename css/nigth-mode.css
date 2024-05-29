@@ -1,0 +1,29 @@
+:root:has(.mode:checked)
+{
+    --primary-hue: 35;
+    --primary-lightness: 44%;
+    --primary-saturation: 72%;
+    --light-hue: 0;
+    --light-saturation: 0%;
+    --light-lightness: 9%;
+    --color-defalut: #fff;
+    --color-secondary: #fff;
+    --color-tertiary: #9f9f9f;
+    --color-light-grey: #252525;
+}
+:root:has(.mode:checked) body {
+    background-color: #202020;
+  }
+  body:has(.mode:checked) .light
+  {
+    display: block;
+    color: var(--color-default);
+  }
+  body:has(.mode:checked) .dark
+  {
+    display: none;
+  }
+  body:has(.mode:checked) .chefs-cards .card picture::after
+  {
+    background-image: url(../imgs/images/team-shape-dark.svg);
+  }
